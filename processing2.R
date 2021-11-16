@@ -32,4 +32,4 @@ finalDataset <-
     ungroup() %>%
     arrange(Year, Professional.Status)
 
-write.csv(finalDataset, file = "processed_data/2.historical_data_1998_2013_per_professional_category", row.names = FALSE)
+write.csv(finalDataset, file = "processed_data/2.historical_data_1998_2013_per_professional_category.csv", row.names = FALSE)
