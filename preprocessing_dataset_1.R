@@ -1,4 +1,5 @@
 library(dplyr)
+library(tidyr)
 
 data <- read.csv("./raw_data/1.historical_data_1998_2013_type_of_journey.csv", header = TRUE)
 
