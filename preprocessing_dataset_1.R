@@ -3,7 +3,7 @@ library(tidyr)
 
 data <- read.csv("./raw_data/1.historical_data_1998_2013_type_of_journey.csv", header = TRUE)
 
-processeData <-
+processedData <-
   data %>%
     select(Tipo.di.viaggio, TIME, Value) %>%
     separate(TIME, c("Year", "Quarter"), "-") %>%
@@ -13,7 +13,7 @@ processeData <-
                                 "vacanza lunga (4 o più notti)" = "long holiday (4 or more nights)",
                                 "viaggio di lavoro" = "business trip")) %>%
     group_by(Year, Travel.Type) %>%
-    summarise(Percentage.people.traveled = mean(Value)) %>%
+    summarise(Avg.People.Per.Quarter = mean(Value), Sd.People.Per.Quarter = sd(Value)) %>%
     ungroup()
 
 write.csv(processedData, "./processed_data/1.historical_data_1998_2013_type_of_journey.csv", row.names = FALSE)
