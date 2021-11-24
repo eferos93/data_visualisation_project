@@ -30,7 +30,7 @@ finalDataset <-
     summarise(Percentage.People.Traveled = sum(Percentage.People.Traveled)) %>%
     ungroup() %>%
     group_by(Year, Professional.Status) %>%
-    summarise(Percentage.People.Traveled = mean(Percentage.People.Traveled)) %>%
+    summarise(Percentage.People.Traveled = round(mean(Percentage.People.Traveled)), digits = 1) %>%
     ungroup() %>%
     arrange(Year, Professional.Status)
 
