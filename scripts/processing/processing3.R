@@ -1,7 +1,7 @@
 library(dplyr)
 
 # "persone che hanno viaggiato. Media annuale - valori per 100 abitanti"
-rawData <- read.csv("raw_data/3.historical_data_1998_2013_year_avg_per_geographical_area.csv")
+rawData <- read.csv("../../raw_data/3.historical_data_1998_2013_year_avg_per_geographical_area.csv")
 
 finalData <- rawData %>%
   select(TIME, Territorio, Value) %>%
@@ -12,4 +12,4 @@ finalData <- rawData %>%
     Mezzogiorno = "South"
   ))
 
-write.csv(finalData, file = "processed_data/3.historical_data_1998_2013_year_avg_per_geographical_area.csv", row.names = FALSE)
+write.csv(finalData, file = "../../processed_data/3.historical_data_1998_2013_year_avg_per_geographical_area.csv", row.names = FALSE)

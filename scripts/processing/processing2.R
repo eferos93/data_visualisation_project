@@ -3,7 +3,7 @@ library(tidyr)
 
 # persone che hanno viaggiato - valori per 100 abitanti con le stesse caratteristiche
 filteredDataset <-
-  read.csv("raw_data/2.historical_data_1998_2013_per_professional_category.csv") %>%
+  read.csv("../../raw_data/2.historical_data_1998_2013_per_professional_category.csv") %>%
     select(TIME, Condizione.professionale, Value) %>%
     rename(Year.Quarter = TIME, Professional.Status = Condizione.professionale, Percentage.People.Traveled = Value) %>%
     separate(Year.Quarter, c("Year", "Quarter"), sep = "-") %>%
@@ -35,4 +35,4 @@ finalDataset <-
     ungroup() %>%
     arrange(Year, Professional.Status)
 
-write.csv(finalDataset, file = "processed_data/2.historical_data_1998_2013_per_professional_category.csv", row.names = FALSE)
+write.csv(finalDataset, file = "../../processed_data/2.historical_data_1998_2013_per_professional_category.csv", row.names = FALSE)

@@ -1,7 +1,7 @@
 library(dplyr)
 library(tidyr)
 
-data <- read.csv("./raw_data/1.historical_data_1998_2013_type_of_journey.csv", header = TRUE)
+data <- read.csv("../../raw_data/1.historical_data_1998_2013_type_of_journey.csv", header = TRUE)
 
 processedData <-
   data %>%
@@ -17,5 +17,5 @@ processedData <-
               Sd.People.Per.Quarter = round(sd(Value), digits = 1)) %>%
     ungroup()
 
-write.csv(processedData, "./processed_data/1.historical_data_1998_2013_type_of_journey.csv", row.names = FALSE)
+write.csv(processedData, "../../processed_data/1.historical_data_1998_2013_type_of_journey.csv", row.names = FALSE)
 
