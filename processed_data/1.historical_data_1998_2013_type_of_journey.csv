@@ -1,49 +1,49 @@
 "Year","Travel.Type","Avg.People.Per.Quarter","Sd.People.Per.Quarter"
-"1998","short holiday (1-3 nights)",10.025,1.70562793910825
-"1998","long holiday (4 or more nights)",15.375,15.7563479271054
-"1998","business trip",3.175,0.170782512765993
-"1999","short holiday (1-3 nights)",9.825,1.86435869224067
-"1999","long holiday (4 or more nights)",15.25,14.9645135793539
-"1999","business trip",3.325,0.206155281280883
-"2000","short holiday (1-3 nights)",9.75,1.84300479290388
-"2000","long holiday (4 or more nights)",15.8,15.7329802220262
-"2000","business trip",3.2,0.382970843102535
-"2001","short holiday (1-3 nights)",9.9,1.80739222823013
-"2001","long holiday (4 or more nights)",16.125,14.7377915577606
-"2001","business trip",3.4,0.336650164612069
-"2002","short holiday (1-3 nights)",10.525,1.26062153982338
-"2002","long holiday (4 or more nights)",16.95,15.7544702650814
-"2002","business trip",3.175,0.221735578260834
-"2003","short holiday (1-3 nights)",10.025,2.26623770450792
-"2003","long holiday (4 or more nights)",16.425,15.4156576246361
-"2003","business trip",3.1,0.365148371670111
-"2004","short holiday (1-3 nights)",10.525,1.55643824162734
-"2004","long holiday (4 or more nights)",16.65,15.254398272848
-"2004","business trip",3.275,0.518812747209113
-"2005","short holiday (1-3 nights)",11.875,2.19905282640807
-"2005","long holiday (4 or more nights)",18,15.7037150593949
-"2005","business trip",3.25,0.479583152331272
-"2006","short holiday (1-3 nights)",12.275,0.991211380079951
-"2006","long holiday (4 or more nights)",18.4,16.7634523095135
-"2006","business trip",2.975,0.55
-"2007","short holiday (1-3 nights)",12.85,2.53311402559511
-"2007","long holiday (4 or more nights)",18.075,16.1136329443942
-"2007","business trip",3.35,0.191485421551268
-"2008","short holiday (1-3 nights)",14.7,1.17473401244707
-"2008","long holiday (4 or more nights)",18.075,15.6037121651655
-"2008","business trip",3.475,0.419324854180304
-"2009","short holiday (1-3 nights)",13.4,2.67706306736817
-"2009","long holiday (4 or more nights)",16.8,15.9864525979551
-"2009","business trip",3.15,0.264575131106459
-"2010","short holiday (1-3 nights)",11.4,2.17408984788271
-"2010","long holiday (4 or more nights)",16.675,15.6024303662389
-"2010","business trip",2.9,0.365148371670111
-"2011","short holiday (1-3 nights)",9.75,1.06301458127347
-"2011","long holiday (4 or more nights)",14.425,14.6386190150119
-"2011","business trip",2.2,0.496655480858378
-"2012","short holiday (1-3 nights)",10.2,2.63944438597722
-"2012","long holiday (4 or more nights)",13.3,13.7763081653492
-"2012","business trip",2.325,0.684957419601151
-"2013","short holiday (1-3 nights)",8.025,1.47054411698527
-"2013","long holiday (4 or more nights)",12.2,14.0598719766575
-"2013","business trip",1.5,0.294392028877595
+"1998","short holiday (1-3 nights)",10,1.7
+"1998","long holiday (4 or more nights)",15.4,15.8
+"1998","business trip",3.2,0.2
+"1999","short holiday (1-3 nights)",9.8,1.9
+"1999","long holiday (4 or more nights)",15.2,15
+"1999","business trip",3.3,0.2
+"2000","short holiday (1-3 nights)",9.8,1.8
+"2000","long holiday (4 or more nights)",15.8,15.7
+"2000","business trip",3.2,0.4
+"2001","short holiday (1-3 nights)",9.9,1.8
+"2001","long holiday (4 or more nights)",16.1,14.7
+"2001","business trip",3.4,0.3
+"2002","short holiday (1-3 nights)",10.5,1.3
+"2002","long holiday (4 or more nights)",16.9,15.8
+"2002","business trip",3.2,0.2
+"2003","short holiday (1-3 nights)",10,2.3
+"2003","long holiday (4 or more nights)",16.4,15.4
+"2003","business trip",3.1,0.4
+"2004","short holiday (1-3 nights)",10.5,1.6
+"2004","long holiday (4 or more nights)",16.6,15.3
+"2004","business trip",3.3,0.5
+"2005","short holiday (1-3 nights)",11.9,2.2
+"2005","long holiday (4 or more nights)",18,15.7
+"2005","business trip",3.2,0.5
+"2006","short holiday (1-3 nights)",12.3,1
+"2006","long holiday (4 or more nights)",18.4,16.8
+"2006","business trip",3,0.6
+"2007","short holiday (1-3 nights)",12.8,2.5
+"2007","long holiday (4 or more nights)",18.1,16.1
+"2007","business trip",3.4,0.2
+"2008","short holiday (1-3 nights)",14.7,1.2
+"2008","long holiday (4 or more nights)",18.1,15.6
+"2008","business trip",3.5,0.4
+"2009","short holiday (1-3 nights)",13.4,2.7
+"2009","long holiday (4 or more nights)",16.8,16
+"2009","business trip",3.1,0.3
+"2010","short holiday (1-3 nights)",11.4,2.2
+"2010","long holiday (4 or more nights)",16.7,15.6
+"2010","business trip",2.9,0.4
+"2011","short holiday (1-3 nights)",9.8,1.1
+"2011","long holiday (4 or more nights)",14.4,14.6
+"2011","business trip",2.2,0.5
+"2012","short holiday (1-3 nights)",10.2,2.6
+"2012","long holiday (4 or more nights)",13.3,13.8
+"2012","business trip",2.3,0.7
+"2013","short holiday (1-3 nights)",8,1.5
+"2013","long holiday (4 or more nights)",12.2,14.1
+"2013","business trip",1.5,0.3
