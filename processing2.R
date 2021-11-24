@@ -13,7 +13,7 @@ finalDataset <-
   filteredDataset %>%
     filter(Professional.Status != "occupato" &
              Professional.Status != "non occupato" &
-             Professional.Status != "totale",
+             Professional.Status != "totale" &
              Professional.Status != "lavoratore in proprio, coadiuvante familiare, co.co.co.") %>%
     mutate(Professional.Status = recode(Professional.Status,
                                         "casalinga-o" = "homemaker",
