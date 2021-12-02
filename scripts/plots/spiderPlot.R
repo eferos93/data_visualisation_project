@@ -1,4 +1,4 @@
-library(ggradar) # ggradar
+devtools::install_github("ricardo-bion/ggradar", dependencies = TRUE) # ggradar
 library(tidyverse) # pivot_wider
 theme_set(theme_bw())
 
@@ -18,9 +18,10 @@ if(answer == "no"){
 }
 
 # grid ranges for spider plot
-# grid.min <- min(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter) # min value = 0 or min number of travels
+grid.min <- min(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter) # min value = 0 or min number of travels
 grid.mid <- mean(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter)
 grid.max <- max(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter)
+print(paste("grid.min:", grid.min, "\n", "grid.mid:", grid.mid, "\n", "grid.max", grid.max))
 
 # pivot table: Professional.Status columns, Year rows indexes and Avg.People.Per.Quarter values
 pivot_data <- pivot_wider(data[data$Year %in% relevant_years, ], id_cols = Year,
