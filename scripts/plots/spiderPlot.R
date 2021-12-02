@@ -1,4 +1,5 @@
-devtools::install_github("ricardo-bion/ggradar", dependencies = TRUE) # ggradar
+# devtools::install_github("ricardo-bion/ggradar", dependencies = TRUE) # ggradar
+library(ggradar)
 library(tidyverse) # pivot_wider
 theme_set(theme_bw())
 
@@ -17,6 +18,7 @@ if(answer == "no"){
   baseline_colours <- c('#bdbdbd', '#969696', '#ef3b2c', '#a50f15', '#525252') # colours focused on crisis
 }
 
+baseline_colours <- c('#67000d', '#fb6a4a')
 # grid ranges for spider plot
 grid.min <- min(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter) # min value = 0 or min number of travels
 grid.mid <- mean(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter)
@@ -59,7 +61,7 @@ ggradar(pivot_data,
         gridline.mid.colour = "gray60",
         gridline.max.colour = "gray60",
         legend.title = "Years",
-        legend.position = "bottom",
+        legend.position = "left",
         # plot.title = 'TITLE',
         group.colours = custom_colours,
         group.point.size = 3, # not possible to set point size for each target attribute from ggradar
