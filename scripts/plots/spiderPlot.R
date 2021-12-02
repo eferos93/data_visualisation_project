@@ -5,7 +5,7 @@ theme_set(theme_bw())
 data <- read.csv("processed_data/2.historical_data_1998_2013_per_professional_category.csv", header = TRUE)
 
 # select which years display in the radar plot
-relevant_years <- c("1998", "2002", "2006", "2010", "2013")
+relevant_years <- c("2004", "2006", "2008", "2010", "2012")
 
 # grid ranges for spider plot
 # grid.min <- min(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter) # min value = 0 or min number of travels
@@ -18,7 +18,7 @@ pivot_data <- pivot_wider(data[data$Year %in% relevant_years, ], id_cols = Year,
                           values_from = Avg.People.Per.Quarter)
 
 # function: set the umbrella of colours for the radar plot
-set_colours <- function (standard, relevant_years, pivot_data, colours_vector){
+set_gg_radar_colours <- function (standard, relevant_years, pivot_data, colours_vector){
   colours <- colorRampPalette(colours_vector)(nrow(pivot_data))
   if(standard == FALSE){
     radar_order_by_colours <- data.frame(Year = relevant_years, Mean = rowMeans(pivot_data))
@@ -30,7 +30,8 @@ set_colours <- function (standard, relevant_years, pivot_data, colours_vector){
   return(colours)
 }
 
-custom_colours <- set_colours(FALSE, relevant_years, pivot_data, c("#67000d", "#fb6a4a"))
+baseline_colours <- c('#bdbdbd', '#969696', '#ef3b2c', '#a50f15', '#525252') # alternative: "#67000d", "#fb6a4a"
+custom_colours <- set_gg_radar_colours(TRUE, relevant_years, pivot_data, baseline_colours)
 
 ggradar(pivot_data,
         # grid.min = grid.min,
@@ -39,17 +40,17 @@ ggradar(pivot_data,
         label.gridline.min = FALSE, # display percentage
         label.gridline.mid = FALSE, # display percentage
         label.gridline.max = FALSE, # display percentage
-        # background.circle.colour = "#FFFFFF",
+        background.circle.colour = "#FFFFFF",
         plot.extent.x.sf = 2.5, # extention of image along the x axis
         axis.line.colour = "gray60",
         axis.label.size = 5,
         gridline.min.colour = "gray60",
         gridline.mid.colour = "gray60",
         gridline.max.colour = "gray60",
-        legend.title = "Year",
+        legend.title = "Years",
         legend.position = "bottom",
         # plot.title = 'TITLE',
         group.colours = custom_colours,
-        group.point.size = 0,
+        group.point.size = 3, # not possible to set point size for each target attribute from ggradar
         group.line.width = 2
 )
