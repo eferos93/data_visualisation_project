@@ -8,8 +8,8 @@ data %>%
   geom_line(aes(color = Travel.Type)) +
   geom_vline(xintercept = 11, linetype = "longdash", color = "black", alpha = 0.5) +
   geom_vline(xintercept = 15, linetype = "longdash", color = "black", alpha = 0.5) +
-  geom_text(aes(x = 10.5, label = "Finalcial Crisis", y = 7.5), color = "black", size = 5) +
-  geom_text(aes(x = 14.5, label = "Spending Review", y = 5), color = "black", size = 5) +
+  # geom_text(aes(x = 10.5, label = "Finalcial Crisis", y = 7.5), color = "black", size = 5) +
+  # geom_text(aes(x = 14.5, label = "Spending Review", y = 5), color = "black", size = 5) +
   labs(
     title = "Average Number of People every 100 that Traveled per Year",
     caption = "Data Source: http://dati.istat.it/",
