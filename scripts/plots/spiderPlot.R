@@ -7,6 +7,16 @@ data <- read.csv("processed_data/2.historical_data_1998_2013_per_professional_ca
 # select which years display in the radar plot
 relevant_years <- c("2004", "2006", "2008", "2010", "2012")
 
+cat("Do you want to use this deafult set of relevant years? ", relevant_years,"\n",sep=" ")
+answer <- scan(what = "string")
+if(answer == "no"){
+  print('Which years do you want to plot? [1998, 2013]')
+  relevant_years <- scan() %>% sapply(function(x) as.character(x)) # from integer to string
+  baseline_colours <- c('#67000d', '#fb6a4a') # gradient of red colour
+}else{
+  baseline_colours <- c('#bdbdbd', '#969696', '#ef3b2c', '#a50f15', '#525252') # colours focused on crisis
+}
+
 # grid ranges for spider plot
 # grid.min <- min(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter) # min value = 0 or min number of travels
 grid.mid <- mean(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter)
@@ -30,7 +40,7 @@ set_gg_radar_colours <- function (standard, relevant_years, pivot_data, colours_
   return(colours)
 }
 
-baseline_colours <- c('#bdbdbd', '#969696', '#ef3b2c', '#a50f15', '#525252') # alternative: "#67000d", "#fb6a4a"
+# define colours
 custom_colours <- set_gg_radar_colours(TRUE, relevant_years, pivot_data, baseline_colours)
 
 ggradar(pivot_data,
