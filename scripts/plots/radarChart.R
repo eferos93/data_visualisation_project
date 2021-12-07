@@ -34,9 +34,13 @@ while(valid_colour_set == FALSE){
     valid_colour_set <- TRUE
   }else if(answer_to_colours == "3"){
     print("provide set of RGB colours:")
-    # #67000d #fc9272 #ef3b2c
     baseline_colours <- scan(what = "string") #  #ef3b2c  #a50f15  #fc9272
-    valid_colour_set <- TRUE
+    if(length(baseline_colours) == length(relevant_years)){
+      valid_colour_set <- TRUE
+    }else{
+      paste(c("incorrect number of RGB colours, the correct number is equals to the number of relevant years: ",
+              length(relevant_years)), collase=" ")
+    }
   }else{
     paste(c(answer_to_colours, " is not a valid configuration, please select a valid one.", collapse=" "))
   }
