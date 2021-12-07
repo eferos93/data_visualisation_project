@@ -9,16 +9,39 @@ data <- read.csv("processed_data/2.historical_data_1998_2013_per_professional_ca
 relevant_years <- c("2004", "2006", "2008", "2010", "2012")
 
 cat("Do you want to use this deafult set of relevant years? ", relevant_years,"\n",sep=" ")
-answer <- scan(what = "string")
-if(answer == "no"){
+answer_to_years <- scan(what = "string")
+if(answer_to_years == "no"){
   print('Which years do you want to plot? [1998, 2013]')
   relevant_years <- scan() %>% sapply(function(x) as.character(x)) # from integer to string
-  baseline_colours <- c('#67000d', '#fb6a4a') # gradient of red colour
-}else{
-  baseline_colours <- c('#bdbdbd', '#969696', '#ef3b2c', '#a50f15', '#525252') # colours focused on crisis
+}
+paste(c("Relevant Years: ", relevant_years), collapse=" ")
+
+valid_colour_set <- FALSE
+while(valid_colour_set == FALSE){
+  print("Which configuration for colours do yo want to adopt?")
+  print("1. Use Gradient of red colour")
+  if(answer_to_years == "yes"){
+    print("2. Use colours focused on crisis")
+  }
+  print("3. Use my custom set of coours")
+
+  answer_to_colours <- scan(what="string")
+  if(answer_to_colours == "1"){
+    baseline_colours <- c('#67000d', '#fb6a4a') # gradient of red colour
+    valid_colour_set <- TRUE
+  }else if(answer_to_years == "yes" && answer_to_colours == "2"){
+    baseline_colours <- c('#bdbdbd', '#969696', '#ef3b2c', '#a50f15', '#525252') # colours focused on crisis
+    valid_colour_set <- TRUE
+  }else if(answer_to_colours == "3"){
+    print("provide set of RGB colours:")
+    # #67000d #fc9272 #ef3b2c
+    baseline_colours <- scan(what = "string") #  #ef3b2c  #a50f15  #fc9272
+    valid_colour_set <- TRUE
+  }else{
+    paste(c(answer_to_colours, " is not a valid configuration, please select a valid one.", collapse=" "))
+  }
 }
 
-baseline_colours <- c('#67000d', '#fb6a4a')
 # grid ranges for spider plot
 grid.min <- min(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter) # min value = 0 or min number of travels
 grid.mid <- mean(data[data$Year %in% relevant_years, ]$Avg.People.Per.Quarter)
