@@ -4,7 +4,8 @@ library(rnaturalearthhires)
 library(tidyverse)
 library(gganimate)
 library(rnaturalearth)
-library(viridis)
+# library(viridis)
+library(gifski)
 
 
 dataset <-
@@ -46,10 +47,20 @@ italy_map_areas <- italy_map %>%
 
 temp <- italy_map_areas %>%
   inner_join(dataset, by = c("area" = "Geographical.Area")) %>%
-  select(-n)
+  select(-n) %>%
+  arrange(Year)
 
-ggplot(temp, aes(fill = Percentage.People.Traveled)) +
-  transition_manual(frames = Year) +
-  geom_sf() +
-  scale_fill_continuous() +
-  theme_void()
+plot3 <-
+  ggplot(temp, aes(fill = Percentage.People.Traveled)) +
+    transition_manual(frames = Year) +
+    geom_sf() +
+    scale_fill_continuous(name = "% of people that traveled") +
+    theme_void(base_size = 15) +
+    labs(
+      title = "Year: {frame+1997}"
+    )
+
+plot3
+
+animate(plot3, height = 1000, width = 1000)
+anim_save("plots/3chrophlet.gif")
