@@ -5,6 +5,9 @@ library(tidyverse)
 library(gganimate)
 library(rnaturalearth)
 library(gifski)
+library(extrafont)
+font_import()
+# loadfonts(device = )
 
 
 dataset <-
@@ -53,10 +56,12 @@ plot3 <-
   ggplot(temp, aes(fill = Percentage.People.Traveled)) +
     transition_manual(frames = Year) +
     geom_sf() +
-    scale_fill_continuous(name = "% of people that traveled") +
-    theme_void(base_size = 15) +
+    scale_fill_continuous(name = "% of travellers") +
+    theme_void(base_size = 20, base_family = "Corbel") +
     labs(
-      title = "Year: {frame+1997}"
+      title = "Travel Trends Variations in Italian Geographical Areas",
+      subtitle = "Year: {frame+1997}",
+      caption = "Data source: http://dati.istat.it/"
     )
 
 plot3
