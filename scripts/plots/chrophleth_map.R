@@ -56,12 +56,15 @@ plot3 <-
   ggplot(temp, aes(fill = Percentage.People.Traveled)) +
     transition_manual(frames = Year) +
     geom_sf() +
-    scale_fill_continuous(name = "% of travellers") +
+    scale_fill_gradient(
+      low = "#fff7ec", high = "#7f0000",
+      name = "% of travellers"
+    ) +
     theme_void(base_size = 20, base_family = "Corbel") +
     labs(
       title = "Travel Trends Variations in Italian Geographical Areas",
       subtitle = "Year: {frame+1997}",
-      caption = "Data source: http://dati.istat.it/"
+      caption ="Data source: http://dati.istat.it/"
     )
 
 plot3
