@@ -4,7 +4,6 @@ library(rnaturalearthhires)
 library(tidyverse)
 library(gganimate)
 library(rnaturalearth)
-# library(viridis)
 library(gifski)
 
 
