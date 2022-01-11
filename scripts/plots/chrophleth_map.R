@@ -62,7 +62,7 @@ plot3 <-
     ) +
     theme_void(base_size = 20, base_family = "Corbel") +
     labs(
-      title = "Travel Trends Variations in Italian Geographical Areas",
+      title = "Travel trends variations in italian geographical areas",
       subtitle = "Year: {frame_time}",
       caption ="Data source: http://dati.istat.it/"
     )
