@@ -5,7 +5,7 @@ library(tidyverse)
 library(gganimate)
 library(rnaturalearth)
 library(gifski)
-library(extrafont)
+# library(extrafont)
 # font_import()
 # loadfonts(device = )
 
@@ -69,5 +69,5 @@ plot3 <-
 
 plot3
 
-animate(plot3 + ease_aes(interval = 10), fps = 12, detail = 50, height = 1000, width = 1000)
+animate(plot3 + ease_aes(interval = 10), fps = 8, detail = 50, height = 1000, width = 1000)
 anim_save("plots/3chrophlet.gif")
