@@ -1,13 +1,20 @@
 library(devtools)
+library(remotes)
 devtools::install_github("ropensci/rnaturalearthhires")
+remotes::install_version("Rttf2pt1", version = "1.3.8")
 library(rnaturalearthhires)
 library(tidyverse)
 library(gganimate)
 library(rnaturalearth)
 library(gifski)
-# library(extrafont)
-# font_import()
-# loadfonts(device = )
+
+
+
+library(extrafont)
+font_import(pattern = "corbel")
+loadfonts(device = "win")
+
+
 
 
 dataset <-
@@ -50,24 +57,27 @@ italy_map_areas <- italy_map %>%
 temp <- italy_map_areas %>%
   inner_join(dataset, by = c("area" = "Geographical.Area")) %>%
   select(-n) %>%
-  arrange(Year)
+  arrange(Year) %>%
+  mutate(Percentage.People.Traveled.Label = paste0(round(Percentage.People.Traveled, 0), "%"))
 
 plot3 <-
   ggplot(temp, aes(fill = Percentage.People.Traveled)) +
     transition_time(Year) +
     geom_sf() +
+    geom_sf_text(aes(label = Percentage.People.Traveled.Label),
+                 colour = "black", size = 10, family = "Corbel") +
     scale_fill_gradient(
       low = "#fff7ec", high = "#7f0000",
       name = "% of travellers"
     ) +
-    theme_void(base_size = 20, base_family = "Corbel") +
+    theme_void(base_size = 28, base_family = "Corbel") +
     labs(
-      title = "Travel trends variations in italian geographical areas",
+      title = "Even during a recession, northern Italians travel more",
       subtitle = "Year: {frame_time}",
       caption ="Data source: http://dati.istat.it/"
     )
 
-plot3
+plot3 + ease_aes(interval = 10)
 
-animate(plot3 + ease_aes(interval = 10), fps = 8, detail = 50, height = 1000, width = 1000)
+animate(plot3 + ease_aes(interval = 10000), fps = 7, detail = 50, height = 1000, width = 1000)
 anim_save("plots/3chrophlet.gif")
